@@ -1,0 +1,90 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator</title>
+    <style>
+        body { font-family: Arial; display: flex; flex-direction: column; align-items: center; background: #f4f4f4; padding: 20px; }
+        #display { width: 300px; height: 60px; font-size: 24px; text-align: right; padding: 10px; border: 2px solid #333; background: white; margin-bottom: 10px; box-sizing: border-box; }
+        .calc-grid { display: grid; grid-template-columns: repeat(4, 75px); gap: 10px; }
+        button { height: 60px; font-size: 20px; border: none; background: #ddd; cursor: pointer; border-radius: 5px; }
+        button:hover { background: #bbb; }
+        .op { background: #ffffff; color: white; }
+        .op:hover { background: #ffffff; }
+        #equals { background: #ffffff; color: white; grid-column: span 2; }
+        #equals:hover { background: #ffffff; }
+        #clear { background: #f1f1f1; color: white; }
+        #clear:hover { background: #ffffff; }
+    </style>
+</head>
+<body>
+    <h2>Calculator</h2>
+    <input type="text" id="display" readonly value="0">
+    <div class="calc-grid">
+        <button id="clear">C</button>
+        <button>±</button>
+        <button>%</button>
+        <button class="op">÷</button>
+        <button>7</button>
+        <button>8</button>
+        <button>9</button>
+        <button class="op">×</button>
+        <button>4</button>
+        <button>5</button>
+        <button>6</button>
+        <button class="op">-</button>
+        <button>1</button>
+        <button>2</button>
+        <button>3</button>
+        <button class="op">+</button>
+        <button>0</button>
+        <button>.</button>
+        <button id="equals">=</button>
+    </div>
+    <script>
+        const display = document.getElementById('display');
+        let currentInput = '0';
+        let operator = null;
+        let previousInput = null;
+
+        document.querySelectorAll('button:not(#clear):not(#equals)').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const value = btn.textContent;
+                if (['+', '-', '×', '÷'].includes(value)) {
+                    operator = value === '÷' ? '/' : value === '×' ? '*' : value;
+                    previousInput = currentInput;
+                    currentInput = '0';
+                } else {
+                    currentInput = currentInput === '0' ? value : currentInput + value;
+                }
+                display.value = currentInput;
+            });
+        });
+
+        document.getElementById('equals').addEventListener('click', () => {
+            if (previousInput !== null && operator && currentInput !== '0') {
+                let num1 = parseFloat(previousInput);
+                let num2 = parseFloat(currentInput);
+                let result;
+                if (operator === '+') result = num1 + num2;
+                else if (operator === '-') result = num1 - num2;
+                else if (operator === '*') result = num1 * num2;
+                else if (operator === '/') result = num2 !== 0 ? num1 / num2 : 'Error';
+                else result = 'Invalid';
+                display.value = result;
+                currentInput = result.toString();
+                previousInput = null;
+                operator = null;
+            }
+        });
+
+        document.getElementById('clear').addEventListener('click', () => {
+            currentInput = '0';
+            previousInput = null;
+            operator = null;
+            display.value = '0';
+        });
+    </script>
+</body>
+</html>
