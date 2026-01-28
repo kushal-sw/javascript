@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Calculator</title>
+<style>
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background: #f5f5f5;
+        font-family: Arial, sans-serif;
+    }
+
+    .calculator {
+        border: 2px solid black;
+        padding: 10px;
+        background: white;
+    }
+
+    .display {
+        width: 100%;
+        height: 50px;
+        margin-bottom: 10px;
+        font-size: 24px;
+        text-align: right;
+        padding: 5px;
+        border: 2px solid black;
+        box-sizing: border-box;
+    }
+
+    .buttons {
+        display: grid;
+        grid-template-columns: repeat(4, 60px);
+        grid-gap: 5px;
+    }
+
+    button {
+        height: 60px;
+        font-size: 18px;
+        background: white;
+        border: 2px solid black;
+        cursor: pointer;
+    }
+
+    button:active {
+        background: #e0e0e0;
+    }
+</style>
+</head>
+<body>
+
+<div class="calculator">
+    <input type="text" id="display" class="display" disabled>
+
+    <div class="buttons">
+        <button onclick="press('AC')">AC</button>
+        <button onclick="press('%')">%</button>
+        <button onclick="press('÷')">÷</button>
+        <button onclick="press('×')">×</button>
+
+        <button onclick="press('7')">7</button>
+        <button onclick="press('8')">8</button>
+        <button onclick="press('9')">9</button>
+        <button onclick="press('-')">-</button>
+
+        <button onclick="press('4')">4</button>
+        <button onclick="press('5')">5</button>
+        <button onclick="press('6')">6</button>
+        <button onclick="press('+')">+</button>
+
+        <button onclick="press('1')">1</button>
+        <button onclick="press('2')">2</button>
+        <button onclick="press('3')">3</button>
+        <button onclick="press('=')">=</button>
+    </div>
+</div>
+
+<script>
+let first = "";
+let second = "";
+let operator = "";
+let resultShown = false;
+
+function press(value) {
+    const display = document.getElementById("display");
+
+    if (value === "AC") {
+        first = "";
+        second = "";
+        operator = "";
+        display.value = "";
+        resultShown = false;
+    }
+
+    else if (value === "+" || value === "-" || value === "×" || value === "÷") {
+        if (first !== "") {
+            operator = value;
+            resultShown = false;
+        }
+    }
+
+    else if (value === "=") {
+        if (first !== "" && second !== "" && operator !== "") {
+            let result = 0;
+
+            if (operator === "+") {
+                result = Number(first) + Number(second);
+            } else if (operator === "-") {
+                result = Number(first) - Number(second);
+            } else if (operator === "×") {
+                result = Number(first) * Number(second);
+            } else if (operator === "÷") {
+                result = Number(first) / Number(second);
+            }
+
+            display.value = result;
+            first = result.toString();
+            second = "";
+            operator = "";
+            resultShown = true;
+        }
+    }
+
+    else if (value === "%") {
+        if (first !== "") {
+            first = (Number(first) / 100).toString();
+            display.value = first;
+        }
+    }
+
+    else {
+        if (operator === "") {
+            if (resultShown) {
+                first = value;
+                resultShown = false;
+            } else {
+                first += value;
+            }
+            display.value = first;
+        } else {
+            second += value;
+            display.value = second;
+        }
+    }
+}
+</script>
+
+</body>
+</html>

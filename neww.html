@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       let quantity = 5;
+        let pricePerItem = 20;
+        let userbalance = 150;
+        let ispremiummake = true;
+        let descountedvalid = true;
+        let subtotal = quantity * pricePerItem;  
+        let eligibblemaker = subtotal > 100 && ispremiummake && descountedvalid;
+        console.log("Subtotal: " + subtotal);
+        document.write(`Subtotal: ${subtotal}` + "<br>");   
+        document.write(`Eligibblemaker: ${eligibblemaker}` + "<br>");
+        let discountedtotal = eligibblemaker ? subtotal * 0.9 : subtotal;
+        document.write(`Discounted Total: ${discountedtotal}` + "<br>");
+        let finaltotal = subtotal * discountedtotal;
+        document.write(`Final Total: ${finaltotal}` + "<br>");
+        let balanceafterpurchase = userbalance - finaltotal;
+        document.write(`Balance After Purchase: ${balanceafterpurchase}` + "<br>");
+    </script>
+</body>
+</html>
