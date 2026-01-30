@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>* Ride with Uber | Request Rides 24/7 | Official Uber Site</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="uber.js" defer></script>
+</head>
+<body>
+    <div class="header">
+        <a href="#" class="logo">Uber</a>
+        <nav class="nav-links">
+            <ul>
+                <li><a href="#">Ride</a></li>
+                <li><a href="#">Drive</a></li>
+                <li><a href="#">Business</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" id="aboutToggle">About
+                        <svg class="dropdown-arrow" width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M18 8v3.8l-6 4.6-6-4.6V8l6 4.6L18 8Z" fill="currentColor"></path></svg>
+                    </a>
+                    <div class="dropdown-menu" id="aboutDropdown">
+                        <a href="#">About us</a>
+                        <a href="#">Our offerings</a>
+                        <a href="#">How Uber works</a>
+                        <a href="#">Sustainability</a>
+                        <a href="#" class="has-submenu">Explore <span class="submenu-arrow">›</span></a>
+                        <a href="#">Newsroom</a>
+                        <a href="#">Investor relations</a>
+                        <a href="#">Autonomous</a>
+                        <a href="#">Blog</a>
+                        <a href="#">Careers</a>
+                    </div>
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 1C5.9 1 1 5.9 1 12s4.9 11 11 11 11-4.9 11-11S18.1 1 12 1Zm8 11c0 .7-.1 1.4-.3 2-.6-1.5-1.6-3.1-3-4.7l1.8-1.8c1 1.3 1.5 2.8 1.5 4.5ZM6.5 6.5c1.3 0 3.6.8 6 2.9l-3.2 3.2C7.1 9.8 6.5 7.5 6.5 6.5Zm8.1 5c2.3 2.7 2.9 5 2.9 6-1.3 0-3.6-.8-6-2.9l3.1-3.1Zm1.9-6.1-1.9 1.9c-1.6-1.4-3.2-2.4-4.7-3 .7-.2 1.3-.3 2-.3 1.8 0 3.3.5 4.6 1.4ZM4 12c0-.7.1-1.4.3-2 .6 1.5 1.6 3.1 3 4.7l-1.8 1.8C4.5 15.2 4 13.7 4 12Zm3.5 6.6 1.9-1.9c1.6 1.4 3.2 2.4 4.7 3-.7.2-1.3.3-2 .3-1.8 0-3.3-.5-4.6-1.4Z" fill="currentColor"></path></svg>
+                    EN
+                </li>
+                <li>
+                    <a href="#" class="btn btn-signup">Help</a>
+                </li>
+                <li><a href="#" class="btn btn-login">Log in</a></li>
+                <li>
+                    <a href="#" class="btn btn-signup-main" style="
+                        background-color: transparent;
+                        color: white;
+                        padding: 8px 16px;
+                        border-radius: 999px;
+                        border: 2px solid white;
+                        text-decoration: none;
+                        font-weight: 500;
+                        display: inline-block;
+                        cursor: pointer;
+                        margin-left: 12px;
+                    " onclick="window.location.href='signup.html'">
+                        Sign up
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div class="hero-section">
+        <h1 class="Ride">Ride</h1>
+        <nav class="nav-links">
+            <ul class="hero-nav">
+                <li><a href="#" class="active">Request a Ride</a></li>
+                <li><a href="#">Reserve a Ride</a></li>
+                <li><a href="#">See Prices</a></li>
+                <li><a href="#">Explore ride options</a></li>
+                <li><a href="#">Airport rides</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="content">
+        <div class="left-content">
+            <div class="location-selector">
+                <svg aria-hidden="true" fill="currentColor" focusable="false" height="1em" width="1em" viewBox="0 0 14 14" color="inherit" class="css-jZqiAM"><path d="M10.9081 2.21665C8.74974 0.0583171 5.24974 0.0583171 3.09141 2.21665C0.933073 4.37498 0.933073 7.93332 3.09141 10.0917L6.99974 14L10.9081 10.0333C13.0664 7.93332 13.0664 4.37498 10.9081 2.21665ZM6.99974 7.29165C6.35807 7.29165 5.83307 6.76665 5.83307 6.12498C5.83307 5.48332 6.35807 4.95832 6.99974 4.95832C7.64141 4.95832 8.16641 5.48332 8.16641 6.12498C8.16641 6.76665 7.64141 7.29165 6.99974 7.29165Z"></path></svg>
+                <h5>Pune,In</h5>
+                <a href="#" class="change-city-link">Change city</a>
+            </div>
+            <div>
+                <h1>Request a ride for now or later</h1>
+                <button class="pickup-btn" id="pickupBtn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                        <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" fill="black"/>
+                        <path d="M12 6v6l4 2" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    <span id="pickupText">Pickup now</span>
+                    <svg class="pickup-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none">
+                        <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div class="right-content">
+            <img src="https://cn-geo1.uber.com/image-proc/crop/resizecrop/udam/format=auto/width=552/height=552/srcb64=aHR0cHM6Ly90Yi1zdGF0aWMudWJlci5jb20vcHJvZC91ZGFtLWFzc2V0cy80MmEyOTE0Ny1lMDQzLTQyZjktODU0NC1lY2ZmZmUwNTMyZTkucG5n" />
+        </div>
+    </div>
+
+    <!-- Pickup Modal -->
+    <div class="modal-overlay" id="pickupModal">
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose">&times;</button>
+            <div class="modal-options">
+                <label class="modal-option">
+                    <span>Pickup now</span>
+                    <input type="radio" name="pickup-option" value="now" checked>
+                    <span class="radio-custom"></span>
+                </label>
+                <div class="modal-divider"></div>
+                <label class="modal-option">
+                    <span>Schedule later</span>
+                    <input type="radio" name="pickup-option" value="later">
+                    <span class="radio-custom"></span>
+                </label>
+            </div>
+            <div class="modal-actions">
+                <button class="modal-btn modal-btn-cancel" id="modalCancel">Cancel</button>
+                <button class="modal-btn modal-btn-confirm" id="modalConfirm">Confirm</button>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2026 Uber Technologies, Inc. All rights reserved.</p>
+    </footer>
+</body>
+</html>

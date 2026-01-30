@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uber App</title>
+</head>
+
+<body style="margin: 0; font-family: Arial, sans-serif;">
+
+    <!-- NAVBAR -->
+    <div style="
+        background-color: black;
+        padding: 15px 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    ">
+        <!-- LEFT -->
+        <div style="display: flex; align-items: center; gap: 25px; color: white;">
+            <!-- Uber Logo -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="57" height="20" fill="none">
+                <path fill="#FFF" d="M8 17.4c2.6 0 4.7-2 4.7-5.1V.3h2.9v19.4h-2.9v-1.8a7 7 0 01-5 2.1c-4.2 0-7.4-3-7.4-7.6V.4h3v11.9c0 3 2 5.1 4.6 5.1zM17.7.3h2.8v7a7 7 0 015-2c4 0 7.3 3.3 7.3 7.4 0 4-3.2 7.3-7.4 7.3a7 7 0 01-5-2.1v1.8h-2.7V.3zm7.6 17.2c2.6 0 4.8-2.1 4.8-4.9 0-2.7-2.2-4.8-4.8-4.8a4.8 4.8 0 00-4.9 4.8c0 2.8 2.2 5 4.9 5zM41.1 5.3c4 0 7 3.1 7 7.3v1H36.7c.4 2.2 2.3 4 4.7 4 1.6 0 3-.7 4-2.1l2 1.5a7.3 7.3 0 01-6 3 7.3 7.3 0 01-7.5-7.4c0-4 3.1-7.3 7.2-7.3zm-4.3 6h8.5a4.4 4.4 0 00-4.2-3.6c-2.1 0-3.8 1.5-4.3 3.6zM55.6 8c-1.8 0-3.2 1.5-3.2 3.7v8h-2.7V5.6h2.7v1.7a3.7 3.7 0 013.4-1.8h1V8h-1.2z"></path>
+            </svg>
+
+            <span>Ride</span>
+            <span>Drive</span>
+            <span>Business</span>
+            <span>About</span>
+        </div>
+
+        <!-- RIGHT -->
+        <div style="display: flex; align-items: center; gap: 20px; color: white;">
+            <span style="display:flex; align-items:center; gap:6px;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M12 1C5.9 1 1 5.9 1 12s4.9 11 11 11 11-4.9 11-11S18.1 1 12 1Zm8 11c0 .7-.1 1.4-.3 2-.6-1.5-1.6-3.1-3-4.7l1.8-1.8c1 1.3 1.5 2.8 1.5 4.5ZM6.5 6.5c1.3 0 3.6.8 6 2.9l-3.2 3.2C7.1 9.8 6.5 7.5 6.5 6.5Zm8.1 5c2.3 2.7 2.9 5 2.9 6-1.3 0-3.6-.8-6-2.9l3.1-3.1Zm1.9-6.1-1.9 1.9c-1.6-1.4-3.2-2.4-4.7-3 .7-.2 1.3-.3 2-.3 1.8 0 3.3.5 4.6 1.4ZM4 12c0-.7.1-1.4.3-2 .6 1.5 1.6 3.1 3 4.7l-1.8 1.8C4.5 15.2 4 13.7 4 12Zm3.5 6.6 1.9-1.9c1.6 1.4 3.2 2.4 4.7 3-.7.2-1.3.3-2 .3-1.8 0-3.3-.5-4.6-1.4Z" fill="currentColor"></path>
+                </svg>
+                <span>EN</span>
+            </span>
+
+            <span style="display:flex; align-items:center; gap:6px;">
+                <svg aria-hidden="true" fill="currentColor" focusable="false" height="16" width="16" viewBox="0 0 14 14">
+                    <path d="M10.9081 2.21665C8.74974 0.0583171 5.24974 0.0583171 3.09141 2.21665C0.933073 4.37498 0.933073 7.93332 3.09141 10.0917L6.99974 14L10.9081 10.0333C13.0664 7.93332 13.0664 4.37498 10.9081 2.21665ZM6.99974 7.29165C6.35807 7.29165 5.83307 6.76665 5.83307 6.12498C5.83307 5.48332 6.35807 4.95832 6.99974 4.95832C7.64141 4.95832 8.16641 5.48332 8.16641 6.12498C8.16641 6.76665 7.64141 7.29165 6.99974 7.29165Z"></path>
+                </svg>
+                <span>Help</span>
+            </span>
+
+            <span>Log in</span>
+
+            <button style="
+                background-color: white;
+                color: black;
+                border: none;
+                padding: 8px 14px;
+                border-radius: 20px;
+                cursor: pointer;
+            ">
+                Sign up
+            </button>
+        </div>
+    </div>
+
+    <!-- LOGIN BOX -->
+    <div style="padding: 20px; margin: 40px auto; width: 320px;">
+        <h2>What's your phone number or <br>email?</h2>
+
+        <input type="text" style="
+            width: 100%;
+            background-color: #313131;
+            border-radius: 5px;
+            margin: 10px 0;
+            padding: 18px 0 18px 20px;
+            border: 1px solid #ccc;
+            color: white;
+        " placeholder="Enter mobile number or email">
+
+        <button style="
+            width: 100%;
+            background-color: black;
+            color: white;
+            border-radius: 5px;
+            margin: 10px 0;
+            padding: 12px;
+            border: none;
+        ">
+            Continue
+        </button>
+    </div>
+
+</body>
+</html>
