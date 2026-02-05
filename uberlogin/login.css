@@ -1,0 +1,228 @@
+/* CSS Reset & Base Styles */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --black: #000000;
+  --white: #ffffff;
+  --gray-100: #f6f6f6;
+  --gray-200: #eeeeee;
+  --gray-300: #e0e0e0;
+  --gray-400: #c4c4c4;
+  --gray-500: #757575;
+  --gray-600: #545454;
+  --gray-700: #333333;
+  --font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    sans-serif;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--white);
+  color: var(--black);
+  line-height: 1.5;
+  min-height: 100vh;
+}
+
+/* Header Styles */
+.header {
+  background-color: var(--black);
+  padding: 16px 24px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+}
+
+.header-content {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.logo {
+  color: var(--white);
+  font-size: 22px;
+  font-weight: 700;
+  text-decoration: none;
+  letter-spacing: -0.5px;
+}
+
+.logo:hover {
+  color: var(--white);
+}
+
+/* Main Content */
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding-top: 120px;
+  padding-bottom: 40px;
+}
+
+.login-container {
+  width: 100%;
+  max-width: 370px;
+  padding: 0 24px;
+}
+
+/* Login Title */
+.login-title {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.3;
+  margin-bottom: 24px;
+  color: var(--black);
+}
+
+/* Form Styles */
+.login-form {
+  width: 100%;
+}
+
+.input-wrapper {
+  margin-bottom: 16px;
+}
+
+.input-field {
+  width: 100%;
+  padding: 16px 14px;
+  font-size: 16px;
+  font-family: var(--font-family);
+  border: 1px solid var(--gray-700);
+  border-radius: 8px;
+  background-color: var(--gray-100);
+  color: var(--black);
+  outline: none;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.input-field::placeholder {
+  color: var(--gray-500);
+}
+
+.input-field:hover {
+  background-color: var(--gray-200);
+}
+
+.input-field:focus {
+  border-color: var(--black);
+  background-color: var(--white);
+}
+
+/* Button Styles */
+.btn {
+  width: 100%;
+  padding: 14px 20px;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: var(--font-family);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  border: none;
+}
+
+.btn-primary {
+  background-color: var(--black);
+  color: var(--white);
+}
+
+.btn-primary:hover {
+  background-color: var(--gray-700);
+}
+
+.btn-primary:active {
+  transform: scale(0.98);
+}
+
+.btn-social {
+  background-color: var(--white);
+  color: var(--black);
+  border: 1px solid var(--gray-300);
+  margin-bottom: 12px;
+}
+
+.btn-social:last-child {
+  margin-bottom: 0;
+}
+
+.btn-social:hover {
+  background-color: var(--gray-100);
+}
+
+.btn-social:active {
+  transform: scale(0.98);
+}
+
+.social-icon {
+  flex-shrink: 0;
+}
+
+/* Divider Styles */
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 20px 0;
+}
+
+.divider-line {
+  flex: 1;
+  height: 1px;
+  background-color: var(--gray-300);
+}
+
+.divider-text {
+  font-size: 14px;
+  color: var(--gray-500);
+  font-weight: 400;
+}
+
+/* Social Buttons Container */
+.social-buttons {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Disclaimer */
+.disclaimer {
+  margin-top: 24px;
+  font-size: 12px;
+  color: var(--gray-600);
+  line-height: 1.5;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+  .main {
+    padding-top: 100px;
+  }
+
+  .login-container {
+    padding: 0 16px;
+  }
+
+  .login-title {
+    font-size: 22px;
+  }
+
+  .header {
+    padding: 14px 16px;
+  }
+}

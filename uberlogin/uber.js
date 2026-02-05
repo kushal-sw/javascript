@@ -119,3 +119,46 @@ if (modalConfirm) {
         closeModal();
     });
 }
+
+const cardData = [
+    {
+        title: "Ride",
+        description:"Go anywhere with Uber. Request a ride, hop in, and go.",
+        btnDetails:"Details",
+        imgSrc:"https://mobile-content.uber.com/launch-experience/top_bar_rides_3d.png"
+    },
+    {
+        title: "Reserve",
+        description:"Reserve your ride in advance so you can relax on the day of your trip.",
+        btnDetails:"Details",
+        imgSrc:"https://mobile-content.uber.com/uber_reserve/reserve_clock.png"
+    },
+     {
+        title: "Intercity",
+        description:"Get convenient, affordable outstation cabs anytime at your door.",
+        btnDetails:"Details",
+        imgSrc:"https://mobile-content.uber.com/launch-experience/intercity.png"
+    },
+     {
+        title: "Courier",
+        description:"Uber makes same-day item delivery easier than ever.",
+        btnDetails:"Details",
+        imgSrc:"https://cn-geo1.uber.com/static/mobile-content/Courier.png"
+    }
+];
+
+const cardsContainer = document.querySelector('.cardsContainer');
+cardData.forEach(card => {
+    const cardDiv = document.createElement('');
+    cardDiv.className = 'card';
+    cardDiv.innerHTML = `
+        <img src="${card.imgSrc}" alt="${card.title} Image">
+        <h3>${card.title}</h3>
+        <p>${card.description}</p>
+        <button class="btn-details">${card.btnDetails}</button>
+    `;
+    cardsContainer.appendChild(cardDiv);
+});        
+console.log("Cards added to the page.");
+console.log("Marks:", marks);
+console.log("Marks:", marks);           
